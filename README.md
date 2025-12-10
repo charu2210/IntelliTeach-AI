@@ -1,29 +1,34 @@
-# Mentor Scoring AI - Round 2 Prototype
+# IntelliTeach-AI 🚀  
 
-🚀 Functional Prototype: Video Upload → AI Scoring (Dummy)
+**Automatic AI-Powered Teacher Evaluation Prototype**  
 
-This system evaluates mentor performance based on:
-- **Clarity** (speech quality)
-- **Engagement** (facial activity)
-- **Confidence** (voice steadiness)
+## 🔎 What is this  
 
-📌 Day-1 Deliverables Completed:
-- Streamlit Frontend (supports video upload)
-- FastAPI Backend (accepts video and returns JSON score)
-- End-to-End working flow (upload → analyze → score display)
+IntelliTeach-AI is a prototype system that analyzes a recorded teaching session (video + audio) and produces **objective, data-driven feedback** on teaching quality.  
+It computes metrics like: clarity, speaking pace, voice confidence, engagement (visual movement), and a combined **Global Benchmark Score**.  
 
-📂 Project Structure
-.
-├─ README.md
-├─ requirements.txt
-└─ src
-   ├─ backend
-   │   └─ main.py
-   └─ frontend
-       └─ app.py
+Use-cases: helping teachers improve delivery, providing scalable feedback, preparing coaching reports, or building a teaching analytics dashboard for institutions.  
 
-🏗️ Next Steps (Day-2 & Day-3)
-- Integrate real AI models (Whisper, OpenCV, Librosa)
-- Add real scoring metrics (not dummy)
-- UI improvements + visual score charts
-- Deployment for Judges demo
+## ✨ Features  
+
+- 🎤 Transcribe lecture audio using Whisper → get full transcript and Words-Per-Minute (WPM)  
+- 🧠 Clarity score (based on filler words, speech clarity)  
+- 🎯 Confidence score (based on voice pitch stability)  
+- 📹 Engagement score (based on video frame analysis / movement)  
+- 📊 Global Benchmark Score: combined signal of pacing and energy  
+- 🧪 Easy to test backend: upload video, get JSON with all relevant metrics  
+
+## 🛠 Tech Stack  
+
+- Python 3.x  
+- Whisper (for audio transcription)  
+- librosa (for audio signal analysis)  
+- moviepy + OpenCV (for video processing / movement detection)  
+- FastAPI (backend server / API)  
+
+## 🚀 How to Run (Locally)  
+
+1. Clone the repo  
+```bash
+git clone https://github.com/charu2210/IntelliTeach-AI.git
+cd IntelliTeach-AI
