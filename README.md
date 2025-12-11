@@ -1,6 +1,6 @@
-# 🎓 Mentor Scoring AI — Round 2 Prototype (IIT Bombay Upskill India)
+# 🎓 IntelliTeach-AI — Round 2 Prototype (IIT Bombay Upskill India)
 
-Mentor Scoring AI evaluates teaching videos and produces a detailed, quantitative scorecard across:
+IntelliTeach-AI evaluates teaching videos and produces a detailed, quantitative scorecard across:
 - Clarity  
 - Engagement  
 - Confidence  
