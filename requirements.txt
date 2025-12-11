@@ -1,11 +1,7 @@
+
 fastapi
 uvicorn
 streamlit
-python-multipart
 requests
-openai-whisper
-opencv-python
-librosa
-numpy
-moviepy
-soundfile
+python-multipart
+openai

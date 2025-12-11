@@ -17,7 +17,7 @@ def extract_audio(video_path: str) -> str:
     """Extract audio from the video using MoviePy and save as temp wav."""
     clip = VideoFileClip(video_path)
     audio_path = f"temp_audio_{uuid.uuid4()}.wav"
-    clip.audio.write_audiofile(audio_path, verbose=False, logger=None)
+    clip.audio.write_audiofile(audio_path)  # FIX: removed verbose + logger
     clip.close()
     return audio_path
 
@@ -62,17 +62,22 @@ def engagement_score(video_path: str) -> float:
             break
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
         if prev is not None:
             diff = cv2.absdiff(gray, prev)
             movement.append(np.sum(diff))
+
         prev = gray
 
     cap.release()
-    if not movement:
-        return 0.0
+
+    # SAFE FALLBACK: if no visible movement → neutral score
+    if not movement or np.mean(movement) == 0:
+        return 50.0  # neutral engagement
 
     score = min(100, (np.mean(movement) / 5000) * 100)
     return round(score, 2)
+
 
 
 # ---------- 3) CONFIDENCE SCORE (Voice Stability) ---------- #

@@ -1,29 +1,12 @@
-# Mentor Scoring AI - Round 2 Prototype
 
-🚀 Functional Prototype: Video Upload → AI Scoring (Dummy)
+# Mentor Scoring AI (OpenAI-powered)
 
-This system evaluates mentor performance based on:
-- **Clarity** (speech quality)
-- **Engagement** (facial activity)
-- **Confidence** (voice steadiness)
+This project evaluates teaching videos using OpenAI models.
 
-📌 Day-1 Deliverables Completed:
-- Streamlit Frontend (supports video upload)
-- FastAPI Backend (accepts video and returns JSON score)
-- End-to-End working flow (upload → analyze → score display)
+## Commands
 
-📂 Project Structure
-.
-├─ README.md
-├─ requirements.txt
-└─ src
-   ├─ backend
-   │   └─ main.py
-   └─ frontend
-       └─ app.py
+### Backend:
+uvicorn backend.main:app --reload --port 8000
 
-🏗️ Next Steps (Day-2 & Day-3)
-- Integrate real AI models (Whisper, OpenCV, Librosa)
-- Add real scoring metrics (not dummy)
-- UI improvements + visual score charts
-- Deployment for Judges demo
+### Frontend:
+streamlit run frontend/app.py
