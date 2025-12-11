@@ -11,7 +11,7 @@ This Round-2 prototype demonstrates a **complete end-to-end workflow** using fre
 
 ---
 
-# 🚀 Features (Round-2 Ready)
+# 🚀 Features
 ✔ Upload a video (MP4)  
 ✔ Automatic transcription via **AssemblyAI (Free)**  
 ✔ Scoring via **Groq LLaMA (Free)**  
