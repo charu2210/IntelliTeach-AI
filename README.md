@@ -138,21 +138,28 @@ Response structure:
 }
 
 ## 📦 Dependencies
-fastapi
-uvicorn
-python-multipart
-requests
-assemblyai
-groq
-streamlit
-pydantic
 
+This project uses the following Python packages:
+
+- `fastapi`  
+- `uvicorn`  
+- `python-multipart`  
+- `requests`  
+- `assemblyai`  
+- `groq`  
+- `streamlit`  
+- `pydantic`
+
+(Full version details are listed in `requirements.txt`.)
+
+---
 
 ## 👥 Contributors
-We collaboratively worked on IntelliTeach-AI with equal responsibility across AI, backend, frontend, and documentation components.
 
-Charu Malik — AI Pipeline • Backend Integration • Documentation
+We collaboratively worked on IntelliTeach-AI with **equal responsibility** across AI, backend, frontend, and documentation components.
 
-Khushi Wadhwa — Frontend Interface • User Workflow • Documentation
+- **Charu Malik** — AI Pipeline • Backend Integration • Documentation  
+- **Khushi Wadhwa** — Frontend Interface • User Workflow • Documentation  
+- **Richa Singh** — Architecture Planning • Research • Quality Review  
 
-Richa Singh — Architecture Planning • Research • Quality Review
+_All contributors participated equally in planning, development, and refinement._
