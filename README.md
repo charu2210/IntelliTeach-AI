@@ -136,3 +136,23 @@ Response structure:
     "transcript": "Full transcript text here..."
   }
 }
+
+## 📦 Dependencies
+fastapi
+uvicorn
+python-multipart
+requests
+assemblyai
+groq
+streamlit
+pydantic
+
+
+## 👥 Contributors
+We collaboratively worked on IntelliTeach-AI with equal responsibility across AI, backend, frontend, and documentation components.
+
+Charu Malik — AI Pipeline • Backend Integration • Documentation
+
+Khushi Wadhwa — Frontend Interface • User Workflow • Documentation
+
+Richa Singh — Architecture Planning • Research • Quality Review
