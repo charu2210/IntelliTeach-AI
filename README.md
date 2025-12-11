@@ -1,127 +1,138 @@
 # 🎓 IntelliTeach-AI — Round 2 Prototype (IIT Bombay Upskill India)
 
-IntelliTeach-AI evaluates teaching videos and produces a detailed, quantitative scorecard across:
+IntelliTeach-AI evaluates teaching videos and generates an objective scorecard across:
+
 - Clarity  
 - Engagement  
 - Confidence  
 - Technical Depth  
 - Interaction Quality  
 
-This Round-2 prototype demonstrates a **complete end-to-end workflow** using free-tier AI tools, a modular backend, and a functional frontend.
+This Round-2 prototype demonstrates a complete end-to-end AI workflow using free-tier transcription and scoring models, a structured backend, and a functional frontend UI.
 
 ---
 
 # 🚀 Features
-✔ Upload a video (MP4)  
-✔ Automatic transcription via **AssemblyAI (Free)**  
-✔ Scoring via **Groq LLaMA (Free)**  
-✔ JSON output with:
-  - category-wise scores  
-  - computed overall score  
-  - improvement suggestions  
-✔ Transcript preview  
-✔ Frontend in Streamlit  
-✔ Backend in FastAPI  
-✔ Clean documentation (`/docs`)  
-✔ Hackathon-approved folder structure (`/src`)  
+
+- Upload a video (MP4)  
+- Automatic transcription via AssemblyAI (Free Tier)  
+- Scoring via Groq LLaMA (Free Tier)  
+- JSON output with category scores, overall score, and improvement suggestions  
+- Transcript preview  
+- Streamlit frontend  
+- FastAPI backend  
+- Complete documentation in `/docs`  
+- Hackathon-compliant folder structure  
 
 ---
 
 # 🏗️ Architecture Overview
 
-### 🟦 Frontend — `src/frontend/app.py`
-Streamlit UI for:
-- Video upload  
-- Sending request to backend  
-- Displaying scores + transcript  
+### Frontend — `src/frontend/app.py`
+Streamlit interface for:
+- Uploading video  
+- Communicating with backend  
+- Showing transcript + scores  
 
-### 🟩 Backend — `src/backend/main.py`
-FastAPI server with:
-- `POST /analyze`  
+### Backend — `src/backend/main.py`
+FastAPI backend with:
+- `POST /analyze` endpoint  
 - Temporary file handling  
-- Calls AI pipeline  
-- Returns JSON  
+- AI scoring pipeline connection  
+- JSON output formatting  
 
-### 🤖 AI Pipeline — `src/ai/analyze.py`
+### AI Pipeline — `src/ai/analyze.py`
 Handles:
 - AssemblyAI transcription  
 - Groq LLaMA scoring  
-- JSON cleanup  
-- Weighted scoring  
+- Weighted computation  
+- Suggestion generation  
 
-### 📂 Full Documentation in `/docs`
-- Architecture document  
-- Technical summary  
-- Workflow  
+### Documentation — `/docs`
+Includes:
+- `architecture.md`  
+- `technical_summary.md`  
+- `IntelliTeach.pdf`  
 
 ---
 
-# 📁 Folder Structure (Hackathon-Compliant)
+# 📁 Folder Structure
 
+```
 IntelliTeach-AI/
 │
 ├── src/
-│ ├── backend/
-│ │ └── main.py
-│ ├── frontend/
-│ │ └── app.py
-│ ├── ai/
-│ │ └── analyze.py
-│ └── utils/ (reserved for Round 3)
+│   ├── backend/
+│   │   └── main.py
+│   ├── frontend/
+│   │   └── app.py
+│   ├── ai/
+│   │   └── analyze.py
+│   └── utils/
 │
 ├── docs/
-│ ├── architecture.md
-│ ├── technical_summary.md
-│ └── (future diagrams)
+│   ├── architecture.md
+│   ├── technical_summary.md
+│   ├── IntelliTeach.pdf
 │
 ├── models/
-│ └── README.md
+│   └── README.md
 │
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 
 ---
 
 # ⚙️ Setup Instructions
 
-## 1️⃣ Install dependencies
+### 1️⃣ Install dependencies
+```
 pip install -r requirements.txt
+```
 
-## 2️⃣ Add FREE API Keys (PowerShell)
-setx ASSEMBLYAI_API_KEY "your-assembly-key"
+### 2️⃣ Add API Keys (PowerShell)
+```
+setx ASSEMBLYAI_API_KEY "your-assemblyai-key"
 setx GROQ_API_KEY "your-groq-key"
+```
 
-Close PowerShell and reopen it.
+Restart PowerShell afterward.
 
-## 3️⃣ Run the backend
+### 3️⃣ Run the backend
+```
 python -m uvicorn src.backend.main:app --reload --port 8000
+```
 
-Check health:
-👉 http://localhost:8000/health
+Health check URL:
+http://localhost:8000/health
 
-Should show:
+Expected output:
+```
 {"status": "ok", "message": "Free version running!"}
+```
 
-## 4️⃣ Run the frontend
+### 4️⃣ Run the frontend
+```
 streamlit run src/frontend/app.py
+```
 
-
-Upload a short MP4 and view the scorecard.
+Upload a short MP4 to view transcript + scorecard.
 
 ---
 
 # 🧪 API Documentation
 
-### **POST /analyze**  
-Upload a video and receive JSON scores.
+### POST /analyze
+Upload a video and receive JSON scoring output.
 
-Example curl:
-curl -X POST http://localhost:8000/analyze-F "file=@sample.mp4"
+Example:
+```
+curl -X POST http://localhost:8000/analyze -F "file=@sample.mp4"
+```
 
-
-Response structure:
+Response:
 ```json
 {
   "ok": true,
@@ -136,30 +147,29 @@ Response structure:
     "transcript": "Full transcript text here..."
   }
 }
-
-## 📦 Dependencies
-
-This project uses the following Python packages:
-
-- `fastapi`  
-- `uvicorn`  
-- `python-multipart`  
-- `requests`  
-- `assemblyai`  
-- `groq`  
-- `streamlit`  
-- `pydantic`
-
-(Full version details are listed in `requirements.txt`.)
+```
 
 ---
 
-## 👥 Contributors
+# 📦 Dependencies
 
-We collaboratively worked on IntelliTeach-AI with **equal responsibility** across AI, backend, frontend, and documentation components.
+- fastapi  
+- uvicorn  
+- python-multipart  
+- requests  
+- assemblyai  
+- groq  
+- streamlit  
+- pydantic  
+
+(Version details in `requirements.txt`.)
+
+---
+
+# 👥 Contributors
+
+All contributors worked with equal responsibility across AI, backend, frontend, and documentation.
 
 - **Charu Malik** — AI Pipeline • Backend Integration • Documentation  
 - **Khushi Wadhwa** — Frontend Interface • User Workflow • Documentation  
 - **Richa Singh** — Architecture Planning • Research • Quality Review  
-
-_All contributors participated equally in planning, development, and refinement._
