@@ -1,10 +1,8 @@
-
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from backend.analyze import analyze_video
-import base64
 
-app = FastAPI(title="Mentor Scoring AI")
+app = FastAPI(title="Mentor Scoring AI (FREE Version)")
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,11 +13,10 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "message": "Free version running!"}
 
 @app.post("/analyze")
 async def analyze(file: UploadFile = File(...)):
     content = await file.read()
-    b64_video = base64.b64encode(content).decode()
-    result = analyze_video(b64_video)
-    return result
+    result = analyze_video(content, file.filename)
+    return {"result": result}
