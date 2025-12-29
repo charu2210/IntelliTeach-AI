@@ -1,4 +1,4 @@
-# 🎓 IntelliTeach-AI — Round 2 Prototype (IIT Bombay Upskill India)
+# 🎓 IntelliTeach-AI 
 
 IntelliTeach-AI evaluates teaching videos and generates an objective scorecard across:
 
